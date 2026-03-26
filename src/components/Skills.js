@@ -31,7 +31,11 @@ const Skills = () => {
     { name: 'Tableau & Power BI', icon: 'fas fa-chart-pie', width: '75%' },
     { name: 'Excel', icon: 'fas fa-file-excel', width: '90%' },
     { name: 'PySpark', icon: 'fas fa-bolt', width: '65%' },
+<<<<<<< HEAD
     { name: 'Linux & Unix Support', icon: 'fab fa-linux', width: '85%' },
+=======
+    { name: 'Linux (Zorin OS) & Unix Support', icon: 'fab fa-linux', width: '85%' },
+>>>>>>> 0dc2c45c79e37f5cc5c6b450be93a14cc4196a42
     { name: 'ITSM (Jira, ServiceNow, Confluence)', icon: 'fas fa-tasks', width: '80%' },
   ];
 

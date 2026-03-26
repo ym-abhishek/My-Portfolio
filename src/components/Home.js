@@ -17,7 +17,11 @@ const Home = () => {
         </div>
         <div className="image-content">
           {/* 2. Use the imported variable name inside curly braces (no quotes!) */}
+<<<<<<< HEAD
           <img src={myPic} alt='' className="profile-pic" />
+=======
+          <img src={myPic} alt="My Picture" className="profile-pic" />
+>>>>>>> 0dc2c45c79e37f5cc5c6b450be93a14cc4196a42
         </div>
       </div>
     </section>
