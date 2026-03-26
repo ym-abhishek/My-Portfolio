@@ -3,6 +3,7 @@ import './App.css'; // Make sure your CSS is imported
 import Home from './components/Home';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
+import Certifications from './components/Certifications';
 import Notes from './components/Notes';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <li><a href="#home">Home</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
+          <li><a href="#certifications">Certifications</a></li>
           <li><a href="#notes">Notes</a></li>
         </ul>
       </nav>
@@ -23,6 +25,7 @@ function App() {
       <Home />
       <Skills />
       <Projects />
+      <Certifications />
       <Notes />
       
       {/* Footer */}

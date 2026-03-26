@@ -132,12 +132,13 @@ nav {
 
 /* Skills Section */
 .skills-grid {
-    max-width: 800px;
+    max-width: 1100px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 2.5rem 2rem; 
 }
+
 .skill-item {
     display: flex;
     align-items: center;
@@ -267,7 +268,6 @@ nav {
     font-size: 0.8rem;
 }
 
-<<<<<<< HEAD
 /* GitHub Button Styling */
 .github-link {
     margin-top: auto; /* Pushes the button to the bottom of the card */
@@ -297,8 +297,6 @@ nav {
     box-sizing: border-box; /* Ensures padding doesn't break height */
 }
 
-=======
->>>>>>> 0dc2c45c79e37f5cc5c6b450be93a14cc4196a42
 /* Notes Section */
 .notes-container {
     display: flex;
@@ -333,6 +331,198 @@ nav {
 .note-box span {
     font-size: 0.9rem;
     text-align: center;
+}
+
+/* Certifications Section */
+/* --- New 3-Column Grid Certifications --- */
+
+.certs-grid {
+    display: grid;
+    /* This creates the 3 responsive columns automatically */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 2rem;
+    padding: 0 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cert-grid-card {
+    background-color: var(--bg-dark);
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.cert-grid-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3); /* Blue glow on hover */
+    border-color: var(--accent-blue);
+}
+
+/* Image section of the card */
+.cert-card-img-container {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    border-bottom: 2px solid #333;
+}
+
+.cert-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top; /* Shows the top of the cert */
+    transition: transform 0.5s ease;
+}
+
+.cert-grid-card:hover .cert-card-img {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Adds a nice magnifying glass icon overlay when hovering over the image */
+.cert-hover-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cert-hover-overlay i {
+    color: white;
+    font-size: 3rem;
+}
+
+.cert-grid-card:hover .cert-hover-overlay {
+    opacity: 1;
+}
+
+/* Text section of the card */
+.cert-card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.cert-card-content h4 {
+    color: var(--text-light);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.cert-author {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.cert-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #333;
+}
+
+.cert-issuer {
+    color: var(--accent-green);
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.cert-date {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: var(--text-gray);
+}
+
+.cert-link {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: auto; /* Pushes link to the bottom of the card */
+    transition: color 0.3s;
+}
+
+.cert-link:hover {
+    color: var(--accent-green);
+}
+
+/* --- Modal / Lightbox Styles (The Pop-up Effect) --- */
+
+.cert-modal-overlay {
+    position: fixed; /* This pulls it out of the normal page flow */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9); /* Dark semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensures it sits on top of your navbar and everything else */
+}
+
+.cert-modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    justify-content: center;
+}
+
+.cert-modal-img {
+    max-width: 100%;
+    max-height: 85vh;
+    border-radius: 8px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+    border: 3px solid var(--accent-blue);
+}
+
+/* The Exit Button */
+.close-btn {
+    position: absolute;
+    top: -45px;
+    right: 0px; 
+    background: transparent;
+    border: none;
+    color: var(--text-light);
+    font-size: 2.5rem; /* Made it nice and big */
+    cursor: pointer;
+    transition: color 0.3s;
+    z-index: 10000;
+}
+
+.close-btn:hover {
+    color: var(--accent-green); /* Turns green when you hover over it */
+    transform: scale(1.1); /* Slightly enlarges on hover */
+}
+
+/* Mobile fix for the exit button */
+@media (max-width: 768px) {
+    .close-btn {
+        top: -40px;
+        right: 10px;
+        font-size: 2rem;
+    }
 }
 
 /* Footer */
